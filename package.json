@@ -1,0 +1,23 @@
+{
+  "name": "mean-machine",
+  "version": "1.0.0",
+  "description": "Sample app from \"MEAN Machine\" tutorial book by Scotch.io. It's supposed to be a CRM (Customer Relations Management) tool.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^5.5.4",
+    "mongoose": "^4.4.2",
+    "morgan": "^1.6.1"
+  }/*,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodeWritingCow/MEAN-machine.git"
+  }*/
+}
