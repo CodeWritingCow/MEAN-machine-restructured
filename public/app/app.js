@@ -1,19 +1,19 @@
-// inject the stuff service into our main Angular module
-angular.module('myApp', ['stuffService'])
+// inject the user service into our main Angular module
+angular.module('myApp', ['userService'])
 
-// create a controller and inject the Stuff factory
-.controller('userController', function(Stuff){
+// create a controller and inject the User factory
+.controller('userController', function(User){
 	
 	var vm = this;
 
 	// get all the stuff
-	Stuff.all()
+	User.all()
 
 	// promise object
 	.success(function(data) {
 		// bind the data to a controller variable
 		// this comes from the stuffService
-		vm.stuff = data;
+		vm.user = data;
 	});
 
 });
