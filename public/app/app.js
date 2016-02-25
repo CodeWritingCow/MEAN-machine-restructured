@@ -8,19 +8,9 @@ angular.module('userApp', [
 	'userService'
 	])
 
-// create a controller and inject the User factory
-.controller('userController', function(User){
+// application configuration to integrate token into requests
+.config(function($httpProvider) {
 	
-	var vm = this;
-
-	// get all the stuff
-	User.all()
-
-	// promise object
-	.success(function(data) {
-		// bind the data to a controller variable
-		// this comes from the stuffService
-		vm.user = data;
-	});
-
+	// attach our auth interceptor to the http requests
+	$httpProvider.interceptors.push('AuthInterceptor');
 });
