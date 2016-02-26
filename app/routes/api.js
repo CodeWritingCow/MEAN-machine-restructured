@@ -1,4 +1,5 @@
-var User = require('../models/user'),
+var bodyParser = require('body-parser'),
+	User = require('../models/user'),
 	jwt = require('jsonwebtoken'),
 	config = require('../../config');
 
@@ -16,7 +17,7 @@ module.exports = function (app, express) {
 		// select the name username and password explicitly
 		User.findOne({
 			username: req.body.username
-		}).select('password').exec(function (err, user) {
+		}).select('name username password').exec(function (err, user) {
 			if (err) throw err;
 
 			// no user with their username was found
@@ -179,6 +180,11 @@ module.exports = function (app, express) {
 			if (err) res.send(err);
 			res.json({ message: 'Successfully deleted' });
 		});
+	});
+
+	// api endpoint to get user information
+	apiRouter.get('/me', function(req, res) {
+		res.send(req.decoded);
 	});
 
 	return apiRouter;
