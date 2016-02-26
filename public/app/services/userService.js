@@ -22,12 +22,12 @@ angular.module('userService', [])
 
 	// update a user
 	userFactory.update = function(id, userData) {
-		return $http.put('/api/users' + id, userData);
+		return $http.put('/api/users/' + id, userData);
 	};
 
 	// delete a user
 	userFactory.delete = function(id) {
-		return $http.delete('/api/users' + id);
+		return $http.delete('/api/users/' + id);
 	};
 
 	// return our entire userFactory object
